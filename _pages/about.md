@@ -4,26 +4,10 @@ title: About
 permalink: /about/
 ---
 
-[Reverie](https://github.com/amitmerchant1990/reverie) is a Jekyll theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for [my blog](https://www.amitmerchant.com).
+Hola! Soy Pablo, un estudiante de 4º grado del grado en ingeniería informática de la [Universidad de Córdoba](http://www.uco.es/). Una de mis grandes pasiones es la
+ciberseguridad, participando regularmente en competiciones de tipo CTF con el equipo [Caliphal Hounds](https://ctftime.org/team/225933/).
 
-This is a plug-and-play Jekyll theme which you can use on GitHub Pages without even setting up a local environment.
+En este blog subo tanto apuntes, como resoluciones de retos resueltos durante las competiciones en las que participo. Además de mis propias experiencias
+en diversos eventos. Si quieres estar al tanto de lo que hago no dudes en seguirme en mis redes sociales!
 
-## Features
-
-- Command-line free fork-first workflow, using GitHub.com to create, customize and post to your blog
-- Fully responsive and mobile optimized base theme
-- Sass/Coffeescript support using Jekyll 2.0
-- Free hosting on your GitHub Pages user site
-- All the SEO goodies comes in-built
-- Markdown blogging
-- Syntax highlighting using Pygments
-    - [Dracula syntax theme](https://draculatheme.com/) included
-- Disqus commenting
-- Google Analytics integration
-- Fuzzy search across blog posts
-- Pagination of posts works out-of-the-box.
-- Categorize posts out-of-the box
-- RSS Feed
-- In-built sitemap
-
-Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how to get started.
+> Este blog ha sido hecho utilizando [Reverie](https://github.com/amitmerchant1990/reverie) un tema de Jekyll.
