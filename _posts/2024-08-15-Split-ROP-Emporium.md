@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Split ROPEmporium (x86_64)
+title: Split ROP Emporium (x86_64)
 comments: true
 categories: [Pwn, Writeups, ROPEmporium]
 ---
