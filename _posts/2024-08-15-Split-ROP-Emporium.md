@@ -13,7 +13,7 @@ excesivamente simple. Con esta serie de posts aprenderemos sobre una de las téc
 
 Como siempre comenzamos lanzando *checksec*:
 
-```checksec
+```
 Arch:     amd64-64-little
 RELRO:    Partial RELRO
 Stack:    No canary found
@@ -26,6 +26,7 @@ Vemos que tan solo tiene el *NX bit*, por lo que el ataque será probablemente m
 Analizando con *gdb-pwndbg*:
 
 > **Funciones**
+
 ```gdb
 0x0000000000400697  main
 0x00000000004006e8  pwnme
@@ -33,6 +34,7 @@ Analizando con *gdb-pwndbg*:
 ```
 
 > **Main**
+
 ```gdb
 0x0000000000400697 <+0>:	push   rbp
 0x0000000000400698 <+1>:	mov    rbp,rsp
@@ -56,6 +58,7 @@ Analizando con *gdb-pwndbg*:
 ```
 
 > **Pwnme**
+
 ```gdb
 0x00000000004006e8 <+0>:	push   rbp
 0x00000000004006e9 <+1>:	mov    rbp,rsp
@@ -83,6 +86,7 @@ Analizando con *gdb-pwndbg*:
 ```
 
 > **UsefulFunction**
+
 ```gdb
 0x0000000000400742 <+0>:	push   rbp
 0x0000000000400743 <+1>:	mov    rbp,rsp
