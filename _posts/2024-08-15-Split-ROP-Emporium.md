@@ -25,17 +25,15 @@ Vemos que tan solo tiene el *NX bit*, por lo que el ataque será probablemente m
 
 Analizando con *gdb-pwndbg*:
 
-> **Funciones**
-
-```gdb
+**Funciones**
+```
 0x0000000000400697  main
 0x00000000004006e8  pwnme
 0x0000000000400742  usefulFunction
 ```
 
-> **Main**
-
-```gdb
+**Main**
+```
 0x0000000000400697 <+0>:	push   rbp
 0x0000000000400698 <+1>:	mov    rbp,rsp
 0x000000000040069b <+4>:	mov    rax,QWORD PTR [rip+0x2009d6]        # 0x601078 <stdout@@GLIBC_2.2.5>
@@ -57,9 +55,8 @@ Analizando con *gdb-pwndbg*:
 0x00000000004006e7 <+80>:	ret
 ```
 
-> **Pwnme**
-
-```gdb
+**Pwnme**
+```
 0x00000000004006e8 <+0>:	push   rbp
 0x00000000004006e9 <+1>:	mov    rbp,rsp
 0x00000000004006ec <+4>:	sub    rsp,0x20
@@ -85,9 +82,8 @@ Analizando con *gdb-pwndbg*:
 0x0000000000400741 <+89>:	ret
 ```
 
-> **UsefulFunction**
-
-```gdb
+**UsefulFunction**
+```
 0x0000000000400742 <+0>:	push   rbp
 0x0000000000400743 <+1>:	mov    rbp,rsp
 0x0000000000400746 <+4>:	mov    edi,0x40084a
@@ -101,7 +97,7 @@ Vemos que tenemos una vulnerabilidad de tipo *Buffer overflow*. Con *cyclic* pod
 
 Vemos también que tenemos una función *usefulFunction*, que nos da una llamada a *system*. Sin embargo, en este caso, se llama a `"/bin/ls"`:
 
-```gdb
+```
 0x0000000000400746 <+4>:	mov    edi,0x40084a
 0x000000000040074b <+9>:	call   0x400560 <system@plt>
 
@@ -113,7 +109,7 @@ pwndbg> x/s 0x40084a
 
 Por lo que si conseguimos meter en *rdi* la cadena `"/bin/cat flag"`, nos imprimirá la flag. Por suerte dicha cadena existe en el binario:
 
-```gdb
+```
 pwndbg> search "/bin/cat"
 Searching for value: '/bin/cat'
 split           0x601060 '/bin/cat flag.txt'

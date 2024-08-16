@@ -14,7 +14,7 @@ Concretamente en este reto, utilizaremos *ROP gadgets* para llamar a varias func
 
 Como siempre comenzamos lanzando [[checksec]]:
 
-```checksec
+```
 Arch:     amd64-64-little
 RELRO:    Partial RELRO
 Stack:    No canary found
@@ -25,7 +25,7 @@ RUNPATH:  b'.'
 
 Vemos que la ejecución es igual que el [ejercicio anterior]({% post_url 2024-08-15-Split-ROP-Emporium %}). Así que analizaremos directamente las funciones con gdb-pwndbg:
 
-```gdb
+```
 0x00000000004006a8  _init
 0x00000000004006d0  puts@plt
 0x00000000004006e0  printf@plt
@@ -61,7 +61,7 @@ En resumen, deberemos llamar a las funciones *callme_* en el orden correcto, pas
 
 En *usefulGadgets* se nos dan los gadgets necesarios para colocar los argumentos:
 
-```asm
+```
 disass usefulGadgets
 
 Dump of assembler code for function usefulGadgets:
