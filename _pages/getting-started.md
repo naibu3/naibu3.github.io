@@ -37,3 +37,7 @@ El siguiente paso lógico es meter la cabeza en el mundo de los ***shellcodes***
 En este punto, toca lidiar con la protección del *bit NX*, que no nos dejará meter nuestros *shellcodes*, pero, ¡no pasa nada! Siempre podemos utilizar las instrucciones del propio binario en su contra, en esto consiste el [***ROP***]({% post_url 2024-08-15-ROP %}). Aquí te empezarás a sentir poderoso, que puedes destruir cualquier binario que se te ponga por delante.
 
 Para ello, lo mejor es la plataforma de [ROP Emporium](https://ropemporium.com/challenge/split.html), además, en este mismo blog tenemos una serie con todos los writeups.
+
+# Siguientes pasos
+
+Ahora mismo me encuentro en este paso, ya sé sobre ensamblador, cómo puedo controlar los datos del programa y el flujo de ejecución. Lo siguente será aprender sobre la memoria dinámica y el *heap*.
