@@ -18,6 +18,8 @@ Además, te recomendaría aprender el lenguage C/C++ ya que es el lenguaje en el
 
 En general éstos conceptos los habrás aprendido si estás estudiando una carrera de informática, software y demás.
 
+Como recurso y apoyo durante tu aprendizaje hasta un nivel medio-alto, te recomiendo el libro (Linux Exploiting)[https://0xword.com/es/libros/55-linux-exploiting.html] de David Puente Castro, editado por 0xWord. Este libro detalla de una forma muy clara las técnicas básicas de explotación de binarios y me parece el mejor recurso para adentrarse en este mundo.
+
 # Entrando en materia
 
 Lo primero a aprender en la explotación de binarios es sobre los ***Buffer Overflows***, es casi siempre el primer paso en los ataques de PWN. Por tanto tu primera misión será familiarizarte con ellos y volverte un experto encontrándolos.
