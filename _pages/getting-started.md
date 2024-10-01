@@ -18,7 +18,7 @@ Además, te recomendaría aprender el lenguage C/C++ ya que es el lenguaje en el
 
 En general éstos conceptos los habrás aprendido si estás estudiando una carrera de informática, software y demás.
 
-Como recurso y apoyo durante tu aprendizaje hasta un nivel medio-alto, te recomiendo el libro (Linux Exploiting)[https://0xword.com/es/libros/55-linux-exploiting.html] de David Puente Castro, editado por 0xWord. Este libro detalla de una forma muy clara las técnicas básicas de explotación de binarios y me parece el mejor recurso para adentrarse en este mundo.
+Como recurso y apoyo durante tu aprendizaje hasta un nivel medio-alto, te recomiendo el libro [Linux Exploiting](https://0xword.com/es/libros/55-linux-exploiting.html) de David Puente Castro, editado por 0xWord. Este libro detalla de una forma muy clara las técnicas básicas de explotación de binarios y me parece el mejor recurso para adentrarse en este mundo.
 
 # Entrando en materia
 
