@@ -3,15 +3,20 @@ layout: default
 ---
 
 <div class="posts">
-  <!-- Imagen grande -->
   <img src="{{ site.baseurl }}/images/camello_hacker.webp" alt="Imagen principal">
   
-  <!-- Texto debajo de la imagen -->
   <h1>El mejor sitio para aprender PWN</h1>
+  <p>Aquí encontrarás todos mis writeups de Competiciones de CTF, así como datos interesantes sobre PWN
+    y experiencias en distintos eventos en los que participe. Disfrútalo y compártelo si te gusta.
+  </p>
   <br>
 </div>
 
 <div class="posts">
+
+  <h1>Últimos posts</h1>
+  <br>
+
   {% for post in paginator.posts %}
     <article class="post">
       <a href="{{ site.baseurl }}{{ post.url }}">
