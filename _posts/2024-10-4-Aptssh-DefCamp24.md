@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Aptssh DefCamp 2024
+title: "aptssh DefCamp 2024"
 comments: true
 categories: [Pwn, Writeups, DefCamp]
 ---
