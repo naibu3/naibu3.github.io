@@ -39,7 +39,7 @@ return( 0 ); /*[6]*/
 }
 ```
 
-Podemos ver que en la línea 3 se produce un [[Heap Overflow]] ya que se copia el input del usuario en `first` sin ninguna comprobación. El heap se vería así:
+Podemos ver que en la línea 3 se produce un *Heap Overflow* ya que se copia el input del usuario en `first` sin ninguna comprobación. El heap se vería así:
 
 ![Image]({{ site.baseurl }}/images/posts/2024-10-21-Unlink-SploitFUN-1.png)
 
