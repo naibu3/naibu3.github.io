@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Haunted Brewery CTF
+title: Create A Flow Haunted Brewery CTF
 comments: true
 categories: [Pwn, Writeups, HauntedBreweryCTF]
 ---
