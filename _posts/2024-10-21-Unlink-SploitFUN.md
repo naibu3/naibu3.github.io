@@ -39,11 +39,11 @@ return( 0 ); /*[6]*/
 }
 ```
 
-Podemos ver que en la línea 3 se produce un [[Heap Overflow]] ya que se copia el input del usuario en `first` sin ninguna comprobación. El heap se vería así:
+Podemos ver que en la línea 3 se produce un *Heap Overflow* ya que se copia el input del usuario en `first` sin ninguna comprobación. El heap se vería así:
 
 ![Image]({{ site.baseurl }}/images/posts/2024-10-21-Unlink-SploitFUN-1.png)
 
-## Técnica [[unlink]]
+## Técnica unlink
 
 > [_Unlink_](https://github.com/sploitfun/lsploits/blob/master/hof/unlink/malloc_unlink_snip.c):  The main idea of this technique is to trick ‘glibc malloc’ to unlink the ‘second’ chunk. While unlinking GOT entry of free would get overwritten with shellcode address!! After successful overwrite, now when free is called by vulnerable program at line [5], shellcode would get executed. Not very clear? No problem, first lets see what ‘glibc malloc’ does when free gets executed.
 
