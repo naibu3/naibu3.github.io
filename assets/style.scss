@@ -502,6 +502,11 @@ body:after {
 //**********************************************************************************************
 
 // Index Terminal header
+.container-terminal {
+  max-width: 100%;
+  justify-items: center;
+}
+
 .terminal {
   background-color: black; /* Fondo negro para simular una terminal */
   color: rgb(255, 255, 255);
@@ -524,19 +529,7 @@ body:after {
 
   @include mobile {
   
-  padding: 15px; /* Menos espacio alrededor */
-  max-width: 100%;
-    
-  
-    .terminal h1 {
-      font-size: 1.5rem; /* Reducir el tamaño del título */
-      margin: 15px 5px; /* Reducir márgenes */
-    }
-  
-    .terminal p {
-      font-size: 1rem; /* Ajustar tamaño del texto */
-      margin: 5px 10px; /* Reducir márgenes */
-    }
+    display: none;
   }
 }
 
@@ -544,7 +537,7 @@ body:after {
   width: 300px; height: auto;
 
   @include mobile {
-    max-width: 100%; height: auto;
+    display:none;
   }
 }
 
