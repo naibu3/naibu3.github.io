@@ -139,7 +139,7 @@ table tr td :last-child {
   text-align: center;
 }
 
-#search-input {
+/*#search-input {
   width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -149,7 +149,7 @@ table tr td :last-child {
   box-sizing: border-box;
   font-size: 18px;
   background-color: #fff3ff;
-}
+}*/
 
 .share-box {
   font-weight: bold;
@@ -523,6 +523,21 @@ body:after {
   }
 }
 
+//Search
+.search-terminal {
+  width: 80%; /* Ocupa todo el ancho del contenedor */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px;
+  border: none; /* Sin borde */
+  border-radius: 25px; /* Bordes muy redondeados */
+  background-color: rgb(30, 30, 30); /* Fondo gris oscuro */
+  color: rgb(255, 255, 255); /* Texto blanco */
+  font-family: 'HackNerdFont', monospace; /* Fuente de terminal */
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Sombra suave para darle profundidad */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
 .prompt {
   color: rgb(255, 255, 255); /* Color típico del prompt */
   margin-right: 5px;
@@ -656,8 +671,6 @@ body:after {
   .slide-handle:hover {
     background-color: #666;
   }
-  
-
 }
 
 /* --------------------------------

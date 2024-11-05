@@ -1,13 +1,15 @@
 ---
 layout: page
-title: Search
+title: Buscar Posts
 permalink: /search/
 ---
 
+
 <div id="search-container">
-    <input type="text" id="search-input" placeholder="Busca entre los posts... No aseguro que encuentres nada">
+    <input id="search-input" type="text" class="search-terminal" placeholder="Busca entre los posts... No aseguro que encuentres nada">
     <ul id="results-container"></ul>
 </div>
+
 
 <script src="{{ site.baseurl }}/assets/simple-jekyll-search.min.js" type="text/javascript"></script>
 
