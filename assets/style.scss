@@ -523,18 +523,17 @@ body:after {
   }
 
   @include mobile {
-
-    .terminal {
-      padding: 15px; /* Menos espacio alrededor */
-    }
+  
+  padding: 15px; /* Menos espacio alrededor */
+    
   
     .terminal h1 {
-      font-size: 1.5em; /* Reducir el tamaño del título */
+      font-size: 1.5rem; /* Reducir el tamaño del título */
       margin: 15px 5px; /* Reducir márgenes */
     }
   
     .terminal p {
-      font-size: 1em; /* Ajustar tamaño del texto */
+      font-size: 1rem; /* Ajustar tamaño del texto */
       margin: 5px 10px; /* Reducir márgenes */
     }
   }
@@ -544,7 +543,7 @@ body:after {
   width: 300px; height: auto;
 
   @include mobile {
-    width: auto; height: auto;
+    max-width: 100%; height: auto;
   }
 }
 
