@@ -588,6 +588,78 @@ body:after {
   }
 }
 
+// Categories section
+#archives {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+
+  .archive-group {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .uml-box {
+    border: 1px solid #ccc; /* Borde gris fino */
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .uml-header {
+    font-size: 22px;
+    font-family: "HackNerdFont", monospace;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .posts-list {
+    max-height: 150px;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    transition: max-height 0.5s ease;
+    padding: 10px 20px 30px;
+    position: relative;
+  }
+  
+  .archive-item h4 {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  .archive-item h4 a {
+    color: #555;
+    text-decoration: none;
+  }
+  
+  .archive-item h4 a:hover {
+    color: #007acc;
+  }
+  
+  /* Deslizador */
+  .slide-handle {
+    width: 10px;
+    background-color: #999;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    display: none; /* Ocultar inicialmente */
+    z-index: 10;
+    height: 100%; /* El deslizador ocupará todo el contenedor */
+  }
+  
+  .slide-handle:hover {
+    background-color: #666;
+  }
+  
+
+}
+
 /* --------------------------------
 
 Modules - reusable parts of our design
