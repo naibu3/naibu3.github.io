@@ -525,6 +525,7 @@ body:after {
   @include mobile {
   
   padding: 15px; /* Menos espacio alrededor */
+  max-width: 100%;
     
   
     .terminal h1 {
