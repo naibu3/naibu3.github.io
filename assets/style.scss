@@ -544,7 +544,7 @@ body:after {
   width: 300px; height: auto;
 
   @include mobile {
-    width: auto; height: 300px;
+    width: 300px; height: auto;
   }
 }
 
