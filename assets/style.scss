@@ -276,6 +276,7 @@ p > img {
   border-bottom: 1px solid $lightGray;
 
   @include mobile {
+    display: block;
     text-align: center;
   }
 }
@@ -289,13 +290,13 @@ p > img {
   @include mobile {
     float: none;
     display: block;
-    margin: 0 auto;
+    margin: 15px 15px;
   }
 
   img {
     border-radius: 5px;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     object-fit: cover;
   }
 }
@@ -306,8 +307,8 @@ p > img {
 
   @include mobile {
     float: none;
-    display: none;
-    margin: 0 auto;
+    display: block;
+    margin: 12px 0;
   }
 }
 
@@ -322,7 +323,7 @@ p > img {
   text-align: left;
 
   @include mobile {
-    display: none;
+    display: block;
     text-align: center;
   }
 }
@@ -530,7 +531,15 @@ body:after {
 
   @include mobile {
   
-    display: none;
+    h1{
+      margin: 10px 5px;
+      font-size: 1.5rem;
+    }
+  
+    p{
+      margin: 5px 15px;
+      font-size: 1rem;
+    }
   }
 }
 

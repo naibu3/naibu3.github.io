@@ -42,4 +42,4 @@ Ya solo tenemos que abrir la imagen:
 
 ![Image]({{ site.baseurl }}/images/posts/2024-11-04-Anti-Spirit-FCaptcha-Haunted-Brewery-CTF.png)
 
-Eso sería todo, si te ha gustado, échale un ojo a mi otro [writeup de web]({% post_url 2024-11-04-Brew4U-Haunted-Brewery-CTF %}).
+Eso sería todo, si te ha gustado, échale un ojo a mi otro [writeup de web]({% post_url 2024-11-4-Brew4U-Haunted-Brewery-CTF %}).

@@ -7,7 +7,7 @@ categories: [Pwn, Writeups, ROPEmporium]
 
 Este será el primer post de los writeups de [ROP Emporium](https://ropemporium.com/challenge/split.html), obviaremos el reto *ret2win*, ya que es
 excesivamente simple. Con esta serie de posts aprenderemos sobre una de las técnicas más utilizadas en la explotación de binarios, la 
-[***ROP***]({% post_url /teoria/2024-08-15-ROP %}), ó *Return Orineted Programming* (Programación orientada a *return*).
+[***ROP***]({% post_url 2024-08-15-ROP %}), ó *Return Orineted Programming* (Programación orientada a *return*).
 
 ## Reconocimiento
 
