@@ -78,4 +78,10 @@ ___
 
 Ahora mismo me encuentro en este paso, ya sé sobre ensamblador, cómo puedo controlar los datos del programa y el flujo de ejecución. Lo siguente será aprender sobre la memoria dinámica y el *heap*, o incluso técnicas avanzadas de los otros tipos de ataques. Y para finalizar, lanzarse a explotar vulnerabilidades en el kernel del sistema operativo, y quién sabe, algún día encontrar tus primeras vulnerabilidades zero-day!
 
+Ahora estoy con este libro sobre kernel, por si os interesa está en pdf:
+
+<br>
+
+![Image]({{ site.baseurl }}/images/pages/a-guide-to-kernel-exploitation.png)
+
 <br>
