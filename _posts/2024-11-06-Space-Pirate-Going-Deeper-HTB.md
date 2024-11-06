@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Space Pirate: Going Deeper
+title: Space Pirate Going Deeper HTB
 comments: true
 categories: [Pwn, Writeups, HTB]
 ---

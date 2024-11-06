@@ -28,7 +28,7 @@ Como recurso y apoyo durante tu aprendizaje hasta un nivel medio-alto, te recomi
 
 <br>
 
-![Image]({{ site.baseurl }}/images/pages/linux-exploiting.jpg)
+![Image]({{ site.baseurl }}/images/pages/linux-exploiting.jpg){:width="50%"}
 
 <br>
 
@@ -82,6 +82,6 @@ Ahora estoy con este libro sobre kernel, por si os interesa está en pdf:
 
 <br>
 
-![Image]({{ site.baseurl }}/images/pages/a-guide-to-kernel-exploitation.png)
+![Image]({{ site.baseurl }}/images/pages/a-guide-to-kernel-exploitation.png){:width="50%"}
 
 <br>
