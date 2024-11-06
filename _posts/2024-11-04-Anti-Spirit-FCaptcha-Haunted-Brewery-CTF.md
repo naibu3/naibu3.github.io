@@ -11,9 +11,11 @@ Este es el tercer y último writeup que subo del [Haunted Brewery CTF 2024](http
 
 # Reconocimientpo
 
-En este caso, tenemos una web con un captcha *troll* que al clickarlo nos dirá que no somos un humano. Para saltarlo, vale con borrar el código javascript de la página. Una vez hecho esto, recibiremos como respuesta del servidor una imagen en base64.
+En este caso, tenemos una web con un captcha *troll* que al clickarlo nos dirá que no somos un humano. Para saltarlo, vale con tramitar la petición desde la consola de desarrollador (`ctl+shift+C`):
 
-Para decodificarla, podemos utilizar *python*:
+![Image]({{ site.baseurl }}/images/posts/2024-11-04-Anti-Spirit-FCaptcha-Haunted-Brewery-CTF-1.png)
+
+Una vez hecho esto, recibiremos como respuesta del servidor una imagen en base64. Para decodificarla, podemos utilizar *python*:
 
 ```python
 import base64
