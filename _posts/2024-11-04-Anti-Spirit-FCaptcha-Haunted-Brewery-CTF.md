@@ -15,7 +15,11 @@ En este caso, tenemos una web con un captcha *troll* que al clickarlo nos dirá 
 
 ![Image]({{ site.baseurl }}/images/posts/2024-11-04-Anti-Spirit-FCaptcha-Haunted-Brewery-CTF-1.png)
 
-Una vez hecho esto, recibiremos como respuesta del servidor una imagen en base64. Para decodificarla, podemos utilizar *python*:
+Una vez hecho esto, recibiremos como respuesta del servidor una imagen en base64:
+
+![Image]({{ site.baseurl }}/images/posts/2024-11-04-Anti-Spirit-FCaptcha-Haunted-Brewery-CTF-2.png)
+
+Para decodificarla, podemos utilizar *python*:
 
 ```python
 import base64
