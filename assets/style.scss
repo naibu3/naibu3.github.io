@@ -288,7 +288,7 @@ p > img {
 
   @include mobile {
     float: none;
-    display: none;
+    display: block;
     margin: 0 auto;
   }
 
@@ -306,7 +306,7 @@ p > img {
 
   @include mobile {
     float: none;
-    display: block;
+    display: none;
     margin: 0 auto;
   }
 }
@@ -322,6 +322,7 @@ p > img {
   text-align: left;
 
   @include mobile {
+    display: none;
     text-align: center;
   }
 }
