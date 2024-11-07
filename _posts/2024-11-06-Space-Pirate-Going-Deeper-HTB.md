@@ -5,8 +5,6 @@ comments: true
 categories: [Pwn, Writeups, HTB]
 ---
 
-# Overview
-
 Este es un reto sencillo de la plataforma [Hack the Box](https://app.hackthebox.com/challenges/Space%2520pirate%253A%2520Going%2520Deeper), comparte título con otros dos que subiré proximamente. Espero que os sirva para aprender!
 
 ![Image]({{ site.baseurl }}/images/posts/htb-logo.png)
