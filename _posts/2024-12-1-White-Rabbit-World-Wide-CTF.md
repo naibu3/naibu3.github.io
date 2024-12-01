@@ -7,7 +7,7 @@ categories: [Pwn, Writeups, WorldWideCTF]
 
 Este es el reto de calentamiento de pwn de la World Wide CTF de 2024. Dado a la cantidad de trabajo que tenía no pude darle mucho tiempo a esta competición, pero he de decir que estuvo muy entretenida y tenía un nivelazo!
 
-![Image]({{ site.baseurl }}/images/posts/wwctflogo.png)
+![Image]({{ site.baseurl }}/images/posts/wwctflogo.png){:width="100px"}
 
 # Overview
 
