@@ -204,7 +204,6 @@ from pwn import *
 
 exe = context.binary = ELF(args.EXE or 'rigged_slot2')
 
-
 def start():
 
     if args.REMOTE:
