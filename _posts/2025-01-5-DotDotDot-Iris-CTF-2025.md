@@ -5,7 +5,7 @@ comments: true
 categories: [RF, Writeups, IrisCTF]
 ---
 
-Llevaba tiempo siin subir ningún post, y qué mejor forma de empezar el año que con un writeup del [Iris CTF](https://ctftime.org/event/2503/). Este es un ejercicio de una categoría que se ve extremadamente poco, y dado que tenía poco tiempo, es el único que pude resolver.
+Llevaba tiempo sin subir ningún post, y qué mejor forma de empezar el año que con un writeup del [Iris CTF](https://ctftime.org/event/2503/). Este es un ejercicio de una categoría que se ve extremadamente poco, y dado que tenía poco tiempo, es el único que pude resolver.
 
 <br>
 
