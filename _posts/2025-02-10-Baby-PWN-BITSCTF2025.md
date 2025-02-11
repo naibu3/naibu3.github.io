@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Baby PWN  BITSCTF2025
+title: Baby PWN BITSCTF2025
 comments: true
 categories: [Pwn, Writeups, BITSCTF2025]
 ---
