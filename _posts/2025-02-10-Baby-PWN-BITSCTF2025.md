@@ -2,7 +2,7 @@
 layout: post
 title: Baby PWN  BITSCTF2025
 comments: true
-categories: [pwn, Writeups, BITSCTF2025]
+categories: [Pwn, Writeups, BITSCTF2025]
 ---
 
 Más vale tarde que nunca, así que aquí tenéis este writeup de la competición de este finde pasado. En este caso se trata de un ejercicio tipo *re2shellcode* bastante sencillito.

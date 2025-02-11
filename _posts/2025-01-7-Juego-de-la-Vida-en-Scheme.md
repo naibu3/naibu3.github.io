@@ -2,7 +2,7 @@
 layout: post
 title: Juego de la Vida en Scheme
 comments: true
-categories: [Programación]
+categories: [Proyectos]
 ---
 
 Esta mañana he finiquitado una de las últimas asignaturas que me quedan de carrera, *Programación Declarativa*. Lo que me quedaba era exponer un pequeño proyecto que teníamos que hacer como conclusión. Como no quería complicarme, me decanté por una implementación del [Juego de la Vida de Conway](https://es.wikipedia.org/wiki/Juego_de_la_vida).
