@@ -8,7 +8,7 @@ categories: [Pwn, Writeups, HFCTF2025]
 Al igual que el año pasado, he participado en el [Hackademics Forum CTF](hackademics-forum.com), aunque como autor de los retos de categoría Pwn. Dado que era un CTF de un evento en el que asisten gran cantidad de público universitario con un nivel no tan alto, estos son retos sencillitos para que le vayan cogiendo cariño a la categoría.
 
 <br>
-![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="150px"}
+![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="250px"}
 <br>
 
 # Overview

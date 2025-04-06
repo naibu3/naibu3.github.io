@@ -12,7 +12,7 @@ Aquí traigo el tercer reto que implementé para la categoría de Pwn para el [H
 En este caso se trata de un *ret2shellcode*, en el que saltaremos a un código que ejecuta una shell en el stack.
 
 <br>
-![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="150px"}
+![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="250px"}
 <br>
 
 # Reconocimiento

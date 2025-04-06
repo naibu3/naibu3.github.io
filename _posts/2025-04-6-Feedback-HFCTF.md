@@ -12,7 +12,7 @@ Aquí traigo el segundo reto que implementé para la categoría de Pwn para el [
 Este es un reto clásico de *ret2win*, en el que debemos llamar a una función que imprimirá la flag.
 
 <br>
-![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="150px"}
+![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="250px"}
 <br>
 
 # Reconocimiento
