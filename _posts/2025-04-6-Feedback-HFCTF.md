@@ -1,15 +1,19 @@
 ---
 layout: post
-title: Wordle 2025
+title: Feedback HFCTF 2025
 comments: true
-categories: [Pwn, Writeups, BITSCTF2025]
+categories: [Pwn, Writeups, HFCTF2025]
 ---
 
-Aquí traigo el segundo reto que implementé para la categoría de Pwn. Como dije se trata de un ejercicio bastante simple pensado para aquellos que se enfrentan por primera vez a esta categoría.
+Aquí traigo el segundo reto que implementé para la categoría de Pwn para el [Hackademics Forum CTF](hackademics-forum.com). Como dije se trata de un ejercicio bastante simple pensado para aquellos que se enfrentan por primera vez a esta categoría.
 
 # Overview
 
 Este es un reto clásico de *ret2win*, en el que debemos llamar a una función que imprimirá la flag.
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/HFCTF.png){:width="150px"}
+<br>
 
 # Reconocimiento
 
