@@ -33,10 +33,6 @@ Sólo me separaba una tabla de enrutado de terminar mi certificación. Al comien
 
 Tras toda una tarde dandome cabezazos, probé a conectarme por *RDP* y por alguna mala configuración entré como root. Terminando así el examen y certificandome como *pentester junior*.
 
-<br>
-![Image]({{ site.baseurl }}/images/posts/eJPT_cert.png){:width="500px"}
-<br>
-
 # Opiniones
 
 La verdad que es una certificación muy divertida, y quitando la parte del pivoting, tiene un laboratorio que funciona de lujo. Yo tenía cierta base, pero cualquiera puede hacer el curso y persentarse sin problema.
@@ -60,5 +56,15 @@ Yo no lo creía, pero muchas veces se puede entrar por fuerza bruta con *hydra* 
 Si no quieres tener que explotar las máquinas varias veces utiliza *cherrytree* o, como en mi caso, *obsidian*. Si tienes credenciales te ahorrarás mucho tiempo a volver a comprobar cosas.
 
 Si estás pensando en presentarte, **MUCHA SUERTE!**
+
+# Dedicatoria
+
+Hace un rato me comunicaron que por fin habían confirmado la petición para cambiar el nombre par meter mi segundo apellido. Justo el que me dejó una de las personas más importantes en mi vida. Estoy seguro que allá donde esté, estará muy orgulloso.
+
+Quería dedicar unas palabras a su memoria, porque creo que le hubiera encantado oír el relato completo de cómo saqué las máquinas y pivoté en una red interna. Aunque no entendiera mucho, ya que llegó tarde a todo esto de los ordenadores, siempre fue el que más interés le puso. Pasaba tardes de verano explicándole cosas de la carrera o ayudándole con las hojas de excel y el *wasah*, justo mientras estudiaba para la eJPT. Por eso, creo que se merece estar aquí, y no puedo contartelo con un vaso de gaseosa y una cuña de queso en tu terraza, pero quiero agradecerte por todo lo que hiciste por tu familia y en especial por mi. Te quiero abuelo.
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/eJPT_cert.png){:width="500px"}
+<br>
 
 <br>
