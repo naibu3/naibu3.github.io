@@ -41,6 +41,9 @@ permalink: /about/
       <div class="carousel-item">
         <img src="/images/pages/about/hack4u_cert.png" class="d-block w-75 mx-auto" alt="Hack4U Introducción al Hacking">
       </div>
+      <div class="carousel-item">
+        <img src="/images/pages/about/hackademics.jpg" class="d-block w-75 mx-auto" alt="Hackademics">
+      </div>
       <!-- Añade más items según necesites -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#certCarousel" data-bs-slide="prev" style="background-color: transparent; border: none;">
