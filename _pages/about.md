@@ -6,8 +6,8 @@ permalink: /about/
 
 <div class="container mt-4">
   <div class="row align-items-center">
-    <div class="col-md-3 text-center">
-      <img src="/images/pages/about/pablo.jpg" alt="Foto de Pablo" class="img-fluid rounded-3" style="max-width: 200px;">
+    <div class="col-md-3 text-center d-flex justify-content-center">
+      <img src="/images/pages/about/pablo.jpg" alt="Foto de Pablo" class="img-fluid rounded-3" style="max-width: 200px;" id="profileImage">
     </div>
     <div class="col-md-8">
       <p>
@@ -60,3 +60,12 @@ permalink: /about/
 <!-- Asegúrate de tener Bootstrap cargado -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+  /* Media query para dispositivos móviles: */
+  @media (max-width: 767px) {
+    #profileImage {
+      display: none; /* Oculta la imagen en pantallas pequeñas */
+    }
+  }
+</style>
