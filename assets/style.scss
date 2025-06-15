@@ -53,14 +53,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 2.5rem;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 @media (min-width: 769px){
@@ -76,11 +76,11 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.25rem;
   color: #222;
 }
 
@@ -381,14 +381,42 @@ nav {
 }
 
 .post {
+  // blockquote {
+  //   margin: 1.8em .8em;
+  //   /*border-left: 2px solid $gray;*/
+  //   padding: 0.1em 1em;
+  //   color: $white;
+  //   font-size: 22px;
+  //   font-style: italic;
+  //   background-color: #000000;
+  // }
+
   blockquote {
-    margin: 1.8em .8em;
-    /*border-left: 2px solid $gray;*/
-    padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
-    font-style: italic;
-    background-color: #ede1ff;
+    font-family: "HackNerdFont", monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 6px;
+    padding: 2em 1em 1em 2em;
+    margin: 4em auto;
+    border: 1px solid #333;
+    font-size: 0.90rem;
+    width: 75%; /* más estrecho que el contenedor */
+    max-width: 800px;
+    position: relative;
+    overflow-x: auto;
+  }
+
+  blockquote::before {
+    content: '';
+    display: block;
+    height: 12px;
+    background: #ff5f56;
+    border-radius: 50%;
+    width: 12px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
   }
 
   .you-may-like{
@@ -462,6 +490,7 @@ body:after {
   font-kerning: auto;
   font-feature-settings: "kern","liga","dlig","hlig","cswh";
   line-height: 1.2;
+  font-size: 2.75rem;
 }
 
 .page h1{
@@ -521,6 +550,7 @@ body:after {
     margin: 20px 10px;
     font-family: 'HackNerdFont', monospace; /* Fuente de terminal */
     font-weight: 450;
+    font-size: 1.75rem;
   }
 
   p{
@@ -914,10 +944,30 @@ Modules - reusable parts of our design
   font-size: 14.5px;
   padding: 2px 13px;
   border: none;
-  background-color: #4CAF50;
+  background-color: #af4caf;
   border-radius: 50px;
   color: #fff;
 }
+
+.post-tags a.category-tag {
+  font-size: 14.5px;
+  padding: 2px 13px;
+  border-radius: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+// Category tags colors
+.post-tags a.category-pwn       { background-color: #000000; }
+.post-tags a.category-writeups      { background-color: #28a745; }
+.post-tags a.category-picoctf      { background-color: #c41230; }
+.post-tags a.category-teoria    { background-color: #ff9800; }
+.post-tags a.category-blog   { background-color: #2555d8; }
+.post-tags a.category-web   { background-color: #00a2e2; }
+.post-tags a.category-ugrctf   { background-color: #000000; }
+.post-tags a.category-ropemporium   { background-color: #e09a01; }
+.post-tags a.category-htb   { background-color: #9eea0f; }
+.post-tags a.category-ugrctf   { background-color: #000000; }
 
 .pagination a, .pagination span {
   padding: 7px 18px;
@@ -1349,6 +1399,26 @@ Modules - reusable parts of our design
     transform: translateX(0);
   }
 }
+
+// Category tags colors
+
+.category-tag {
+  display: inline-block;
+  padding: 0.3em 0.7em;
+  font-size: 0.8rem;
+  border-radius: 0.3em;
+  color: white;
+  text-decoration: none;
+  margin: 0 0.3em 0.3em 0;
+  font-weight: 500;
+}
+
+.category-Pwn       { background-color: #007acc; }
+.category-Writeups      { background-color: #28a745; }
+.category-PicoCTF      { background-color: #e83e8c; }
+.category-design    { background-color: #ff9800; }
+.category-default   { background-color: #777; }
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
