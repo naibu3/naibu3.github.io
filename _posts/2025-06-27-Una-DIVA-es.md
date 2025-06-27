@@ -9,4 +9,10 @@ Como dijo Melody en Eurovisión, *Una diva es valiente, poderosa* y vulnerable??
 
 # Instalación
 
-Lo mejor es instalar la aplicación en un dispositivo *rooteado*, conectado al equipo mediante USB.
+Lo mejor es instalar la aplicación en un dispositivo *rooteado*, conectado al equipo mediante USB. Para instalarla podemos hacerlo mediante la herramienta **adb**:
+
+```bash
+adb install DIVA.apk
+```
+
+Una vez instalada veremos un menú con los siguientes niveles:
