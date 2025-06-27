@@ -102,3 +102,8 @@ En este nivel se nos da un capo para buscar nombres de usuario. Sin embargo, si 
 
 Con una entrada como `' or '1'='1` podemos ver todos los usuarios:
 
+# Input Validation Issues - Part 2
+
+Dado que trata de acceder a una URL sin ninguna validación, podemos listar archivos locales como el del ejercicio 1.
+
+
