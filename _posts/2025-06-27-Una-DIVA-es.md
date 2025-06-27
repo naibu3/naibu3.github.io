@@ -179,3 +179,57 @@ dz> run app.activity.start --component jakhar.aseem.diva jakhar.aseem.diva.APICr
 Attempting to run shell module
 ```
 
+# Hardcoding Issues - Part 2
+
+En este penúltimo nivel se nos dice que la contraseña está hardcodeada. Para encontrarla debemos buscarla en la librería que se está importando:
+
+```bash
+public class DivaJni {
+    private static final String soName = "divajni";
+
+    public native int access(String str);
+
+    public native int initiateLaunchSequence(String str);
+
+    static {
+        System.loadLibrary(soName);
+    }
+}
+```
+
+Para acceder a la libreria podemos extraer los contenidos de la apk con *zip*:
+
+```bash
+unzip Diva.apk
+```
+
+Podemos encontrar la librería en `lib`. Si decompilamos la librería con **ghidra**, podemos como se realiza la comparación con la contraseña:
+
+```bash
+bool Java_jakhar_aseem_diva_DivaJni_access(long *param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  char *pcVar1;
+  long lVar2;
+  char *pcVar3;
+  undefined uVar4;
+  byte bVar5;
+  
+  bVar5 = 0;
+  uVar4 = 1;
+  pcVar1 = (char *)(**(code **)(*param_1 + 0x548))(param_1,param_3,0);
+  lVar2 = 0xb;
+  pcVar3 = "olsdfgad;lh";
+  do {
+    if (lVar2 == 0) {
+      return (bool)uVar4;
+    }
+    lVar2 = lVar2 + -1;
+    uVar4 = *pcVar3 == *pcVar1;
+    pcVar3 = pcVar3 + (ulong)bVar5 * -2 + 1;
+    pcVar1 = pcVar1 + (ulong)bVar5 * -2 + 1;
+  } while ((bool)uVar4);
+  return (bool)uVar4;
+}
+```
+
