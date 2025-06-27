@@ -63,9 +63,25 @@ En este segundo nivel las credenciales parecen almacenarse en una base de datos:
 
 No podemos extraerla directamente, pero podemos copiarla en `/data/local/tmp`, ya que ahí tenemos permisos:
 
+```bash
+tucana:/data/data/jakhar.aseem.diva/databases # cp ids2 /data/local/tmp  
+```
+
+Y nos la descargamos con **adb**:
+
+```bash
+adb pull /data/local/tmp/ids2
+/data/local/tmp/divanotes.db: 1 file pulled, 0 skipped. 6.3 MB/s (20480 bytes in 0.003s)
+```
+
 Y con **sqlite3** podemos ver la tabla `myuser`:
 
-
+```bash
+sqlite> .tables
+android_metadata  myuser          
+sqlite> select * from myuser;
+naibu3 |naibu3
+```
 
 # Insecure Data Storage - Part 3
 
