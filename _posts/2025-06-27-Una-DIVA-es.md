@@ -96,4 +96,9 @@ naibu3:naibu3
 
 Este último nivel es igual que el anterior, pero se trata de u archivo oculto:
 
+# Input Validation Issues - Part 1
+
+En este nivel se nos da un capo para buscar nombres de usuario. Sin embargo, si revisamos el código veremos que es vulnerable a SQLi:
+
+Con una entrada como `' or '1'='1` podemos ver todos los usuarios:
 
