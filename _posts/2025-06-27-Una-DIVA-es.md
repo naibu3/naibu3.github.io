@@ -233,3 +233,4 @@ bool Java_jakhar_aseem_diva_DivaJni_access(long *param_1,undefined8 param_2,unde
 }
 ```
 
+Por tanto con introducir `olsdfgad;lh` para superar el nivel.
