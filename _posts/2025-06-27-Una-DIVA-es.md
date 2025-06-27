@@ -59,13 +59,25 @@ Y podríamos ver la información que hay almacenada. Hay que recalcar que si no 
 
 # Insecure Data Storage - Part 2
 
-Este nivel es muy similar, pero en este caso se almacenan en otro archivo:
+En este segundo nivel las credenciales parecen almacenarse en una base de datos:
+
+No podemos extraerla directamente, pero podemos copiarla en `/data/local/tmp`, ya que ahí tenemos permisos:
+
+Y con **sqlite3** podemos ver la tabla `myuser`:
+
+
+
+# Insecure Data Storage - Part 3
+
+Este nivel es muy similar, pero en este caso se almacenan en texto plano en un archivo:
 
 ```bash
 tucana:/data/data/jakhar.aseem.diva # cat uinfo8847310758726822991tmp                                                                            
 naibu3:naibu3
 ```
 
-# Insecure Data Storage - Part 3
+# Insecure Data Storage - Part 4
+
+Este último nivel es igual que el anterior, pero se trata de u archivo oculto:
 
 
