@@ -205,7 +205,7 @@ unzip Diva.apk
 
 Podemos encontrar la librería en `lib`. Si decompilamos la librería con **ghidra**, podemos como se realiza la comparación con la contraseña:
 
-```bash
+```c
 bool Java_jakhar_aseem_diva_DivaJni_access(long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
@@ -234,3 +234,44 @@ bool Java_jakhar_aseem_diva_DivaJni_access(long *param_1,undefined8 param_2,unde
 ```
 
 Por tanto con introducir `olsdfgad;lh` para superar el nivel.
+
+# Input Validation Issues - Part 3
+
+El último reto consiste en crashear el programa. En este nivel vemos una vulnerabilidad de tipo buffer overflow. Podemos ver el código también en la librería:
+
+```c
+bool Java_jakhar_aseem_diva_DivaJni_initiateLaunchSequence
+               (long *param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  char *pcVar1;
+  long lVar2;
+  char *pcVar3;
+  bool bVar4;
+  byte bVar5;
+  char local_28 [40];
+  
+  bVar5 = 0;
+  pcVar1 = (char *)(**(code **)(*param_1 + 0x548))(param_1,param_3,0);
+  strcpy(local_28,pcVar1);
+  bVar4 = local_28[0] == '!';
+  if (bVar4) {
+    local_28[0] = '.';
+  }
+  lVar2 = 7;
+  pcVar1 = ".dotdot";
+  pcVar3 = local_28;
+  do {
+    if (lVar2 == 0) {
+      return bVar4;
+    }
+    lVar2 = lVar2 + -1;
+    bVar4 = *pcVar1 == *pcVar3;
+    pcVar1 = pcVar1 + (ulong)bVar5 * -2 + 1;
+    pcVar3 = pcVar3 + (ulong)bVar5 * -2 + 1;
+  } while (bVar4);
+  return bVar4;
+}
+```
+
+Introduciendo muchas letras podemos desbordar la memoria, corropiendo el puntero de instrucción. Y así superar el último nivel de la DIVA.
