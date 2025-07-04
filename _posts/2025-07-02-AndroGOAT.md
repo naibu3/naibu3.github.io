@@ -5,13 +5,12 @@ comments: true
 categories: [Mobile, Writeups]
 ---
 
-
 <br>
 ![Image]({{ site.baseurl }}/images/posts/AndroGOAT/AndroGOAT.png){:width="300px"}
 
 # Root Detection
 
-Uno de los niveles nos plantea una interfaz con un botón que al ser pulsado nos reporta si se detectan privilegios de superusuario. El objetivo es saltar esta protección.
+El nivel de detección de root nos plantea una interfaz con un botón que al ser pulsado nos reporta si se detectan privilegios de superusuario. El objetivo es saltar esta protección.
 
 ## Frida
 
@@ -235,4 +234,4 @@ Una vez modificado podemos recompilar e instalar y *voilá*, tendremos acceso a 
 <br>
 ![Image]({{ site.baseurl }}/images/posts/AndroGOAT/GOAT-Patching-Solved.png){:width="200px"}
 
-Y con esto habríamos terminado de vulnerar la aplicación AndroGoat.
+Y con esto habríamos terminado de vulnerar la aplicación AndroGoat. Sólo quedaría la parte de interceptar tráfico, pero será cubierta en un post futuro.
