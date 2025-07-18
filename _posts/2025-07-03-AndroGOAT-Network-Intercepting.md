@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AndroGOAT Writeup
+title: AndroGOAT - Network Intercepting
 comments: true
 categories: [Mobile, Writeups]
 ---

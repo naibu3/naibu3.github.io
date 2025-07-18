@@ -5,6 +5,8 @@ comments: true
 categories: [Mobile, Writeups]
 ---
 
+En este post estaremos resolviendo algunos niveles de la aplicación Android vulnerable del [OWASP MASTG](https://github.com/OWASP/mastg), AndroGOAT.
+
 <br>
 ![Image]({{ site.baseurl }}/images/posts/AndroGOAT/AndroGOAT.png){:width="300px"}
 
