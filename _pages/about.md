@@ -35,6 +35,9 @@ permalink: /about/
       <div class="carousel-item active">
         <img src="/images/posts/eJPT_cert.png" class="d-block w-75 mx-auto" alt="eJPT">
       </div>
+      <div class="carousel-item active">
+        <img src="/images/posts/CRTP.png" class="d-block w-75 mx-auto" alt="CRTP">
+      </div>
       <div class="carousel-item">
         <img src="/images/pages/about/NCL_cert.png" class="d-block w-75 mx-auto" alt="NCL">
       </div>
@@ -43,6 +46,15 @@ permalink: /about/
       </div>
       <div class="carousel-item">
         <img src="/images/pages/about/hackademics.jpg" class="d-block w-75 mx-auto" alt="Hackademics">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/pages/about/HF3.jpg" class="d-block w-75 mx-auto" alt="Hackademics 3">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/pages/about/NHNCTF.jpg" class="d-block w-75 mx-auto" alt="NHNCTF">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/pages/about/UGR.jpg" class="d-block w-75 mx-auto" alt="UGR">
       </div>
       <!-- Añade más items según necesites -->
     </div>
