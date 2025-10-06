@@ -11,11 +11,11 @@ permalink: /about/
     </div>
     <div class="col-md-8">
       <p>
-        ¡Hola! Soy Pablo (aunque en ctfs me encontraréis como <strong>naibu3</strong>), un estudiante de 4º grado del Grado en Ingeniería Informática de la 
-        <a href="http://www.uco.es/">Universidad de Córdoba</a>. Como podéis ver, una de mis grandes pasiones es la ciberseguridad, regularmente participo en 
+        ¡Hola! Soy Pablo (aunque en ctfs me encontraréis como <strong>naibu3</strong> o <strong>pablipoyo</strong>), soy graduado en Ingeniería Informática por la 
+        <a href="http://www.uco.es/">Universidad de Córdoba</a> y actualmente trabajo como Pentester en DEKRA Málaga. Como podéis ver, una de mis grandes pasiones es la ciberseguridad, regularmente participo en 
         competiciones de tipo <strong>CTF</strong> con el equipo 
-        <a href="https://ctftime.org/team/225933/">Caliphal Hounds</a> y colaboro frecuentemente con el 
-        <a href="https://www.uco.es/aulaRedesSeguridad/">Aula de Ciberseguridad y Redes</a> de la universidad.
+        <a href="https://ctftime.org/team/225933/">Caliphal Hounds</a> y formo parte del 
+        <a href="https://www.uco.es/aulaRedesSeguridad/">Aula de Ciberseguridad y Redes</a> de la Universidad de Córdoba.
       </p>
       <p>
         En este blog subo tanto apuntes, como resoluciones de retos resueltos durante las competiciones en las que participo. 
