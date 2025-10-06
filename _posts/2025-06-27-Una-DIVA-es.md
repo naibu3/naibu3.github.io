@@ -5,7 +5,7 @@ comments: true
 categories: [Mobile, Writeups]
 ---
 
-Como dijo Melody en Eurovisión, *Una diva es valiente, poderosa* y vulnerable??? En este post estaremos superando los retos de DIVA ó *Damn Vulnerable and Insecure App*, este es un proyecto para aprender lo básico sobre explotación en Android.
+Como dijo Melody en Eurovisión, *Una diva es valiente, poderosa* y vulnerable??? En este post estaremos superando los retos de [DIVA](https://github.com/payatu/diva-android) ó *Damn Vulnerable and Insecure App*, este es un proyecto para aprender lo básico sobre explotación en Android.
 
 # Instalación
 
@@ -17,9 +17,18 @@ adb install DIVA.apk
 
 Una vez instalada veremos un menú con los siguientes niveles:
 
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/diva.jpg){:width="200px"}
+
+
 # Insecure Loging
 
-El primer nivel nos muestra un campo que espera un número de tarjeta de crédito. Nos piden que veamos como se está logueando la información. Si descompilamos con **jadx** veremos como se está
+El primer nivel nos muestra un campo que espera un número de tarjeta de crédito:
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/insecure_login.jpg){:width="200px"}
+
+Nos piden que veamos como se está logueando la información. Si descompilamos con **jadx** veremos que se genera un log etiquetado como `diva-log`.
 
 Con **adb** podemos ver los logs:
 
@@ -33,9 +42,17 @@ adb logcat | grep -i "Error while"
 
 En el segundo nivel vemos una vista similar a la anterior que nos solicita una clave. Si inspeccionamos el código veremos lo siguiente:
 
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/hardcoding_issues.jpg){:width="200px"}
+
 # Insecure Data Storage - Part 1
 
-En este nivel se nos da una especie de logging, y se nos pide que encontremos donde se almacenan las credenciales. Decompilando el programa, vemos que se almacenan en la configuración por defecto:
+En este nivel se nos da una especie de logging, y se nos pide que encontremos donde se almacenan las credenciales.
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/insecure_storage.jpg){:width="200px"}
+
+Decompilando el programa, vemos que se almacenan en la configuración por defecto:
 
 Podemos acceder a ella con **adb**:
 
@@ -94,7 +111,7 @@ naibu3:naibu3
 
 # Insecure Data Storage - Part 4
 
-Este último nivel es igual que el anterior, pero se trata de u archivo oculto:
+Este último nivel es igual que el anterior, pero se trata de un archivo oculto (`.uinfo.txt`).
 
 # Input Validation Issues - Part 1
 
@@ -102,9 +119,15 @@ En este nivel se nos da un capo para buscar nombres de usuario. Sin embargo, si 
 
 Con una entrada como `' or '1'='1` podemos ver todos los usuarios:
 
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/input_validation_issues_solution.jpg){:width="200px"}
+
 # Input Validation Issues - Part 2
 
-Dado que trata de acceder a una URL sin ninguna validación, podemos listar archivos locales como el del ejercicio 1.
+Dado que trata de acceder a una URL sin ninguna validación, podemos listar archivos locales como el del ejercicio 1 con `file://`:
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/input_validation_issues2.jpg){:width="200px"}
 
 # Access Control Issues - Part 1
 
@@ -140,6 +163,8 @@ Vamos a investigar con **drozer**:
 adb forward tcp:31415 tcp:31415
 31415
 ```
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/drozer.jpg){:width="200px"}
 
 ```bash
 drozer console connect
@@ -183,7 +208,7 @@ Attempting to run shell module
 
 En este penúltimo nivel se nos dice que la contraseña está hardcodeada. Para encontrarla debemos buscarla en la librería que se está importando:
 
-```bash
+```java
 public class DivaJni {
     private static final String soName = "divajni";
 
@@ -205,7 +230,7 @@ unzip Diva.apk
 
 Podemos encontrar la librería en `lib`. Si decompilamos la librería con **ghidra**, podemos como se realiza la comparación con la contraseña:
 
-```c
+```java
 bool Java_jakhar_aseem_diva_DivaJni_access(long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
@@ -233,7 +258,10 @@ bool Java_jakhar_aseem_diva_DivaJni_access(long *param_1,undefined8 param_2,unde
 }
 ```
 
-Por tanto con introducir `olsdfgad;lh` para superar el nivel.
+Por tanto con introducir `olsdfgad;lh` vale para superar el nivel.
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/hardcoding_issues2.jpg){:width="200px"}
 
 # Input Validation Issues - Part 3
 
@@ -242,7 +270,6 @@ El último reto consiste en crashear el programa. En este nivel vemos una vulner
 ```c
 bool Java_jakhar_aseem_diva_DivaJni_initiateLaunchSequence
                (long *param_1,undefined8 param_2,undefined8 param_3)
-
 {
   char *pcVar1;
   long lVar2;
@@ -274,4 +301,9 @@ bool Java_jakhar_aseem_diva_DivaJni_initiateLaunchSequence
 }
 ```
 
-Introduciendo muchas letras podemos desbordar la memoria, corropiendo el puntero de instrucción. Y así superar el último nivel de la DIVA.
+Introduciendo muchas letras podemos desbordar la memoria, corropiendo el puntero de instrucción. Y así superar el último nivel de la DIVA:
+
+<br>
+![Image]({{ site.baseurl }}/images/posts/diva/hardcoding_issues3.jpg){:width="200px"}
+
+En este caso, podemos aprovechar el buffer para obtener una reverse shell. Sin embargo, dada la complejidad del proceso de debug y la explotación, no lo trataré aquí.
