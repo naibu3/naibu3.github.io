@@ -47,7 +47,7 @@ jobs:
           test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
           # staticrypt pide password si no se pasa como argumento: se lo damos por stdin
-          printf "%s\n" "$STATICRYPT_PASSWORD" | staticrypt "$TARGET" -o "$TARGET" --config false
+          printf "%s\n" "$STATICRYPT_PASSWORD" | staticrypt "$TARGET" -o "$TARGET" --config false --short
 
           echo "=== AFTER ENCRYPT: markers ==="
           grep -nEi "passphrase|decrypt|staticrypt|StatiCrypt" "$TARGET" | head -n 20 || true
