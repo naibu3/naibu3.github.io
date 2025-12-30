@@ -37,29 +37,22 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Encrypt one post with staticrypt
+      - name: Encrypt Arno HTB post with staticrypt
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: |
           npm i -g staticrypt
 
-          # ✅ CAMBIA ESTO por un patrón único de tu post (slug)
-          SLUG="Arno-HTB"
+          TARGET="_site/Arno-HTB/index.html"
+          test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
-          # Encuentra el HTML generado del post (sirve tanto si es .html como /index.html)
-          TARGET="$(find _site -type f -name '*.html' | grep -E "/${SLUG}(/index\.html|\.html)$" | head -n 1)"
+          staticrypt "$TARGET" -p "$STATICRYPT_PASSWORD" --short -o "$TARGET"
 
-          if [ -z "$TARGET" ]; then
-            echo "No se encontró HTML para SLUG=$SLUG"
-            echo "Pistas: lista de posibles rutas:"
-            find _site -maxdepth 6 -type f -name "*.html" | head -n 200
-            exit 1
-          fi
+          echo "Verificación rápida:"
+          head -n 10 "$TARGET"
 
-          echo "Encrypting: $TARGET"
-          staticrypt "$TARGET" -p "$STATICRYPT_PASSWORD" -o "$TARGET"
 
-      # ---- Upload artifact to Pages ----
+            # ---- Upload artifact to Pages ----
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
