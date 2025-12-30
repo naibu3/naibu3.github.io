@@ -1,3 +1,10 @@
+---
+layout: post
+title: Rookie Salvation
+comments: true
+categories: [Heap, Pwn, Writeups]
+---
+
 En este post os traigo el segundo reto de la categoría de PWN en el *Hack the Boo* de [Hack The Box](https://www.hackthebox.com). Este reto ha sido bastante especial para mí, ya que es el primer reto de heap que resuelvo en una competición como tal.
 
 # Overview
