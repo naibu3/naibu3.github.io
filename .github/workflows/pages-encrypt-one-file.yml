@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Encrypt Arno-HTB post with staticrypt
+      - name: Encrypt Arno-HTB post with staticrypt (non-interactive)
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: |
@@ -46,17 +46,12 @@ jobs:
           TARGET="_site/Arno-HTB/index.html"
           test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
-          # IMPORTANTE:
-          # 1) password POSICIONAL (2º argumento)
-          # 2) -o para sobrescribir el mismo fichero
-          staticrypt "$TARGET" "$STATICRYPT_PASSWORD" -o "$TARGET" --config false
+          # staticrypt pide password si no se pasa como argumento: se lo damos por stdin
+          printf "%s\n" "$STATICRYPT_PASSWORD" | staticrypt "$TARGET" -o "$TARGET" --config false
 
-          echo "=== AFTER ENCRYPT: markers (debería salir algo tipo Passphrase/DECRYPT) ==="
-          grep -nEi "Passphrase|DECRYPT|staticrypt|StatiCrypt|Remember me" "$TARGET" | head -n 20 || true
-
-          echo "=== AFTER ENCRYPT: first 10 lines ==="
+          echo "=== AFTER ENCRYPT: markers ==="
+          grep -nEi "passphrase|decrypt|staticrypt|StatiCrypt" "$TARGET" | head -n 20 || true
           head -n 10 "$TARGET"
-
 
                   # ---- Upload artifact to Pages ----
       - name: Upload Pages artifact
