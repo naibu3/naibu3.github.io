@@ -46,12 +46,20 @@ jobs:
           TARGET="_site/Arno-HTB/index.html"
           test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
-          # staticrypt pide password si no se pasa como argumento: se lo damos por stdin
-          printf "%s\n" "$STATICRYPT_PASSWORD" | staticrypt "$TARGET" -o "$TARGET" --config false --short
+          # 1) Cifra (con env var no te pide password)
+          # Esto genera la salida en encrypted/<ruta_original> por defecto :contentReference[oaicite:1]{index=1}
+          staticrypt "$TARGET" --config false
 
-          echo "=== AFTER ENCRYPT: markers ==="
-          grep -nEi "passphrase|decrypt|staticrypt|StatiCrypt" "$TARGET" | head -n 20 || true
-          head -n 10 "$TARGET"
+          # 2) Localiza el HTML cifrado generado
+          OUT="$(find encrypted -type f -path "*/_site/Arno-HTB/index.html" | head -n 1)"
+          test -f "$OUT" || (echo "No encuentro salida cifrada en encrypted/. Contenido:" && find encrypted -maxdepth 4 -type f -name '*.html' -print && exit 1)
+
+          # 3) Sobrescribe el original
+          cp "$OUT" "$TARGET"
+
+          echo "=== AFTER ENCRYPT (should show password prompt HTML, not your post) ==="
+          head -n 15 "$TARGET"
+          grep -nEi "password|passphrase|decrypt|Protected Page|Remember me|staticrypt|StatiCrypt" "$TARGET" | head -n 20 || true
 
                   # ---- Upload artifact to Pages ----
       - name: Upload Pages artifact
