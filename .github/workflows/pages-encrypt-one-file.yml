@@ -46,20 +46,18 @@ jobs:
           TARGET="_site/Arno-HTB/index.html"
           test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
-          # Fuerza modo no interactivo: contraseña + confirmación "y"
+          # Password por stdin + confirmación "y" (porque es corta)
           { printf "%s\n" "$STATICRYPT_PASSWORD"; printf "y\n"; } | staticrypt "$TARGET" --short --config false
 
-          # La salida suele generarse en encrypted/ (si la herramienta llega a cifrar)
-          test -d encrypted || (echo "No se creó encrypted/. Algo falló en staticrypt." && exit 1)
-
-          OUT="$(find encrypted -type f -path "*/_site/Arno-HTB/index.html" | head -n 1)"
-          test -f "$OUT" || (echo "No encuentro el HTML cifrado. Listando:" && find encrypted -type f -maxdepth 5 -print && exit 1)
+          OUT="encrypted/index.html"
+          test -f "$OUT" || (echo "No encuentro salida cifrada. Contenido de encrypted/:" && ls -la encrypted && exit 1)
 
           cp "$OUT" "$TARGET"
 
           echo "=== AFTER ENCRYPT (debe verse wrapper de password) ==="
-          head -n 15 "$TARGET"
+          head -n 20 "$TARGET"
           grep -nEi "password|passphrase|decrypt|staticrypt|StatiCrypt" "$TARGET" | head -n 30 || true
+
 
 
                   # ---- Upload artifact to Pages ----
