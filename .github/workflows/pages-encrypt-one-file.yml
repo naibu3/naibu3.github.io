@@ -1,0 +1,75 @@
+name: Build & Deploy Pages (encrypt one post)
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ---- Build Jekyll ----
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      # ---- Encrypt exactly one HTML file in _site ----
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Encrypt one post with staticrypt
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
+        run: |
+          npm i -g staticrypt
+
+          # ✅ CAMBIA ESTO por un patrón único de tu post (slug)
+          SLUG="Arno-HTB"
+
+          # Encuentra el HTML generado del post (sirve tanto si es .html como /index.html)
+          TARGET="$(find _site -type f -name '*.html' | grep -E "/${SLUG}(/index\.html|\.html)$" | head -n 1)"
+
+          if [ -z "$TARGET" ]; then
+            echo "No se encontró HTML para SLUG=$SLUG"
+            echo "Pistas: lista de posibles rutas:"
+            find _site -maxdepth 6 -type f -name "*.html" | head -n 200
+            exit 1
+          fi
+
+          echo "Encrypting: $TARGET"
+          staticrypt "$TARGET" -p "$STATICRYPT_PASSWORD" -o "$TARGET"
+
+      # ---- Upload artifact to Pages ----
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
