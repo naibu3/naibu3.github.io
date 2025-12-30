@@ -37,24 +37,26 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Encrypt Arno-HTB with staticrypt (in-place)
+      - name: Encrypt Arno-HTB post with staticrypt
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: |
           npm i -g staticrypt
 
-          # Entramos en _site para que la ruta sea relativa
-          cd _site
+          TARGET="_site/Arno-HTB/index.html"
+          test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
-          # Cifra el HTML y lo escribe de vuelta en _site/Arno-HTB/index.html
-          # (-d . => output directory = _site)
-          staticrypt Arno-HTB/index.html -p "$STATICRYPT_PASSWORD" -d . --short --config false
+          # IMPORTANTE:
+          # 1) password POSICIONAL (2º argumento)
+          # 2) -o para sobrescribir el mismo fichero
+          staticrypt "$TARGET" "$STATICRYPT_PASSWORD" -o "$TARGET" --config false
 
-          echo "=== AFTER ENCRYPT: markers ==="
-          grep -nEi "staticrypt|StatiCrypt|password|decrypt" Arno-HTB/index.html | head -n 20 || true
+          echo "=== AFTER ENCRYPT: markers (debería salir algo tipo Passphrase/DECRYPT) ==="
+          grep -nEi "Passphrase|DECRYPT|staticrypt|StatiCrypt|Remember me" "$TARGET" | head -n 20 || true
 
-          echo "=== AFTER ENCRYPT: first 15 lines ==="
-          head -n 15 Arno-HTB/index.html
+          echo "=== AFTER ENCRYPT: first 10 lines ==="
+          head -n 10 "$TARGET"
+
 
                   # ---- Upload artifact to Pages ----
       - name: Upload Pages artifact
