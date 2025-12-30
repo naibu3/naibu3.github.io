@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Encrypt Arno-HTB post with staticrypt (non-interactive)
+      - name: Encrypt Arno-HTB post with staticrypt (overwrite)
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: |
@@ -46,20 +46,21 @@ jobs:
           TARGET="_site/Arno-HTB/index.html"
           test -f "$TARGET" || (echo "No existe: $TARGET" && exit 1)
 
-          # 1) Cifra (con env var no te pide password)
-          # Esto genera la salida en encrypted/<ruta_original> por defecto :contentReference[oaicite:1]{index=1}
-          staticrypt "$TARGET" --config false
+          # Fuerza modo no interactivo: contraseña + confirmación "y"
+          { printf "%s\n" "$STATICRYPT_PASSWORD"; printf "y\n"; } | staticrypt "$TARGET" --short --config false
 
-          # 2) Localiza el HTML cifrado generado
+          # La salida suele generarse en encrypted/ (si la herramienta llega a cifrar)
+          test -d encrypted || (echo "No se creó encrypted/. Algo falló en staticrypt." && exit 1)
+
           OUT="$(find encrypted -type f -path "*/_site/Arno-HTB/index.html" | head -n 1)"
-          test -f "$OUT" || (echo "No encuentro salida cifrada en encrypted/. Contenido:" && find encrypted -maxdepth 4 -type f -name '*.html' -print && exit 1)
+          test -f "$OUT" || (echo "No encuentro el HTML cifrado. Listando:" && find encrypted -type f -maxdepth 5 -print && exit 1)
 
-          # 3) Sobrescribe el original
           cp "$OUT" "$TARGET"
 
-          echo "=== AFTER ENCRYPT (should show password prompt HTML, not your post) ==="
+          echo "=== AFTER ENCRYPT (debe verse wrapper de password) ==="
           head -n 15 "$TARGET"
-          grep -nEi "password|passphrase|decrypt|Protected Page|Remember me|staticrypt|StatiCrypt" "$TARGET" | head -n 20 || true
+          grep -nEi "password|passphrase|decrypt|staticrypt|StatiCrypt" "$TARGET" | head -n 30 || true
+
 
                   # ---- Upload artifact to Pages ----
       - name: Upload Pages artifact
