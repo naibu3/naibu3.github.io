@@ -51,6 +51,16 @@ jobs:
           echo "Verificación rápida:"
           head -n 10 "$TARGET"
 
+          echo "=== AFTER ENCRYPT: first 25 lines ==="
+          head -n 25 "$TARGET"
+
+          echo "=== AFTER ENCRYPT: look for staticrypt markers ==="
+          grep -nEi "staticrypt|StatiCrypt|decrypt|password" "$TARGET" || true
+
+          echo "=== AFTER ENCRYPT: file size ==="
+          wc -c "$TARGET"
+
+
 
             # ---- Upload artifact to Pages ----
       - name: Upload Pages artifact
